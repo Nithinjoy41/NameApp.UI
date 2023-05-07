@@ -1,0 +1,24 @@
+<div *ngIf="name && !name.hide" style="text-align:center;">
+  <h2 *ngIf="!name.id">Fill & Save</h2>
+  <h2 *ngIf="name.id">Edit</h2>
+  <div style="display: grid;">
+
+    <div >
+      FirstName :
+      <input [(ngModel)]="name.firstName" placeholder="First Name"/>
+    </div>
+    <div >
+      LastName :
+      <input  [(ngModel)]="name.lastName" placeholder="Last Name"/>
+    </div>
+    <div  style="margin-left: 36px">
+      Place :
+      <input [(ngModel)]="name.place" placeholder="Place"/>
+    </div>
+  </div>
+
+<button (click)="updatePerson(name)" *ngIf="name.id">Save</button>
+<button (click)="deletePerson(name)" *ngIf="name.id">Delete</button>
+<button (click)="createPerson(name)" *ngIf="!name.id">Create</button>
+
+</div>
